@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace AdventOfCode2020
 {
@@ -10,17 +11,9 @@ namespace AdventOfCode2020
         {
         }
 
-        public static List<string> GetLines(int day)
+        public static List<string> GetLines(int day, string split)
         {
-            var lines = new List<string>();
-            string line;
-
-            var file = new StreamReader($"/Users/vsidhu/Projects/AdventOfCode2020/AdventOfCode2020/Input/Day{day}.txt");
-
-            while ((line = file.ReadLine()) != null)
-                lines.Add(line);
-
-            return lines;
+            return File.ReadAllText($"/Users/vsidhu/Projects/AdventOfCode2020/AdventOfCode2020/Input/Day{day}.txt").Split(split, StringSplitOptions.RemoveEmptyEntries).ToList(); ;
         }
     }
 }

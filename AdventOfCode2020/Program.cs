@@ -6,8 +6,8 @@ namespace AdventOfCode2020
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Day3.PartOne());
-            Console.WriteLine(Day3.PartTwo());
+            Console.WriteLine(Day5.PartOne());
+            //Console.WriteLine(Day5.PartTwo());
         }
     }
 }

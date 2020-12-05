@@ -17,7 +17,7 @@ namespace AdventOfCode
         Right,
         Left
     }
-
+    /*
     public enum Compass
     {
         North,
@@ -1539,4 +1539,5 @@ namespace AdventOfCode
             items.ForEach(i => q.Enqueue(i));
         }
     }
+    */
 }

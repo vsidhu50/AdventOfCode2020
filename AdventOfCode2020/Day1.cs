@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AdventOfCode2020
 {
@@ -11,7 +12,7 @@ namespace AdventOfCode2020
 
         public static int PartOne()
         {
-            var lines = Utilities.GetLines(1);
+            var lines = Utilities.GetLines(1, "\n");
             var numbers = new List<int>();
 
             foreach (var line in lines)
@@ -29,7 +30,7 @@ namespace AdventOfCode2020
 
         public static int PartTwo()
         {
-            var lines = Utilities.GetLines(1);
+            var lines = Utilities.GetLines(1, "\n");
             var numbers = new List<int>();
 
             foreach (var line in lines)
@@ -42,7 +43,6 @@ namespace AdventOfCode2020
                             for (int k = j + 1; k < numbers.Count; k++)
                                 if (numbers[i] + numbers[j] + numbers[k] == 2020)
                                     return numbers[i] * numbers[j] * numbers[k];
-
 
             return -1;
         }

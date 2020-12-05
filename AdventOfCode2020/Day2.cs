@@ -13,7 +13,7 @@ namespace AdventOfCode2020
         public static int PartOne()
         {
             var validCount = 0;
-            var lines = Utilities.GetLines(2);
+            var lines = Utilities.GetLines(2, "\n");
 
             var pattern = @"(\d+)-(\d+) (\w): (\w+)";
             var regex = new Regex(pattern, RegexOptions.IgnoreCase);
@@ -42,7 +42,7 @@ namespace AdventOfCode2020
         public static int PartTwo()
         {
             var validCount = 0;
-            var lines = Utilities.GetLines(2);
+            var lines = Utilities.GetLines(2, "\n");
 
             var pattern = @"(\d+)-(\d+) (\w): (\w+)";
             var regex = new Regex(pattern, RegexOptions.IgnoreCase);
