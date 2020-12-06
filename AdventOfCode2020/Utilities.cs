@@ -11,9 +11,24 @@ namespace AdventOfCode2020
         {
         }
 
-        public static List<string> GetLines(int day, string split)
+        public static List<string> GetInputLines(int day)
         {
-            return File.ReadAllText($"/Users/vsidhu/Projects/AdventOfCode2020/AdventOfCode2020/Input/Day{day}.txt").Split(split, StringSplitOptions.RemoveEmptyEntries).ToList(); ;
+            return File.ReadAllText($"/Users/vsidhu/Projects/AdventOfCode2020/AdventOfCode2020/Input/Day{day}.txt").Split('\n', StringSplitOptions.RemoveEmptyEntries).ToList(); ;
+        }
+
+        public static List<string> GetInputParagraphs(int day)
+        {
+            return File.ReadAllText($"/Users/vsidhu/Projects/AdventOfCode2020/AdventOfCode2020/Input/Day{day}.txt").Split("\n\n", StringSplitOptions.RemoveEmptyEntries).ToList();
+        }
+
+        public static List<string> GetLines(string input)
+        {
+            return input.Split('\n', StringSplitOptions.RemoveEmptyEntries).ToList();
+        }
+
+        public static List<string> GetWords(string input)
+        {
+            return input.Split(new string[] { " ", "\t", Environment.NewLine, ",", "\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
         }
     }
 }

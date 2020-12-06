@@ -12,7 +12,7 @@ namespace AdventOfCode2020
 
         public static int PartOne()
         {
-            var lines = Utilities.GetLines(5, "\n");
+            var lines = Utilities.GetInputLines(5);
             var maxSeat = 0;
 
             foreach (var line in lines)
@@ -28,7 +28,7 @@ namespace AdventOfCode2020
 
         public static int PartTwo()
         {
-            var lines = Utilities.GetLines(5, "\n");
+            var lines = Utilities.GetInputLines(5);
             var filledSeats = new List<int>();
 
             foreach (var line in lines)

@@ -13,7 +13,7 @@ namespace AdventOfCode2020
 
         public static int PartOne()
         {
-            var lines = Utilities.GetLines(4, "\n\n");
+            var lines = Utilities.GetInputLines(4);
             var validCount = 0;
 
             var reqFields = new List<string> { "byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid" };
@@ -22,7 +22,7 @@ namespace AdventOfCode2020
             {
                 var fields = new Dictionary<string, string>();
 
-                foreach (var pair in line.Split(new char[0], StringSplitOptions.RemoveEmptyEntries))
+                foreach (var pair in Utilities.GetWords(line))
                 {
                     var parts = pair.Split(':');
                     fields.Add(parts[0], parts[1]);
@@ -37,7 +37,7 @@ namespace AdventOfCode2020
 
         public static int PartTwo()
         {
-            var lines = Utilities.GetLines(4, "\n\n");
+            var lines = Utilities.GetInputLines(4);
             var validCount = 0;
 
             var reqFields = new List<string> { "byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid" };
@@ -46,7 +46,7 @@ namespace AdventOfCode2020
             {
                 var fields = new Dictionary<string, string>();
 
-                foreach (var pair in line.Split(new char[0], StringSplitOptions.RemoveEmptyEntries))
+                foreach (var pair in Utilities.GetWords(line))
                 {
                     var parts = pair.Split(':');
                     fields.Add(parts[0], parts[1]);

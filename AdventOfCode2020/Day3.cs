@@ -19,7 +19,7 @@ namespace AdventOfCode2020
 
         private static long TreeCount(int right, int down)
         {
-            var lines = Utilities.GetLines(3, "\n");
+            var lines = Utilities.GetInputLines(3);
             var rowCount = lines.Count;
             var colCount = lines[0].Length;
 

@@ -12,7 +12,7 @@ namespace AdventOfCode2020
 
         public static int PartOne()
         {
-            var lines = Utilities.GetLines(1, "\n");
+            var lines = Utilities.GetInputLines(1);
             var numbers = new List<int>();
 
             foreach (var line in lines)
@@ -30,7 +30,7 @@ namespace AdventOfCode2020
 
         public static int PartTwo()
         {
-            var lines = Utilities.GetLines(1, "\n");
+            var lines = Utilities.GetInputLines(1);
             var numbers = new List<int>();
 
             foreach (var line in lines)
