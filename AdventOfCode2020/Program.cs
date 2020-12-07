@@ -6,8 +6,9 @@ namespace AdventOfCode2020
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Day6.PartOne());
-            Console.WriteLine(Day6.PartTwo());
+            Console.WriteLine("MAKE SURE YOU'RE RUNNING THE RIGHT DAY YOU IDIOT");
+            //Console.WriteLine("Part 1: " + Day8.PartOne()); // Make sure you change the day dumb dumb
+            //Console.WriteLine("Part 2: " + Day8.PartTwo()); // Make sure you change the day dumb dumb
         }
     }
 }
