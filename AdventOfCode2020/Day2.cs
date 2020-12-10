@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace AdventOfCode2020
@@ -25,11 +26,8 @@ namespace AdventOfCode2020
                 var max = Int32.Parse(match.Groups[2].ToString());
                 var letter = Char.Parse(match.Groups[3].ToString());
                 var password = match.Groups[4].ToString();
-                var letterCount = 0;
 
-                foreach (var character in password)
-                    if (character == letter)
-                        letterCount++;
+                var letterCount = password.Where(c => c == letter).Count();
 
                 if (letterCount >= min && letterCount <= max)
                     validCount++;

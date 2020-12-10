@@ -13,46 +13,16 @@ namespace AdventOfCode2020
         public static int PartOne()
         {
             var groups = Utilities.GetInputParagraphs(6);
-            var totalAny = 0;
 
-            foreach (var group in groups)
-            {
-                var answers = new HashSet<char>();
-
-                foreach(var line in Utilities.GetLines(group))
-                {
-                    foreach (var letter in line)
-                        answers.Add(letter);
-                }
-
-                totalAny += answers.Count;
-            }
-
-            return totalAny;
+            return groups.Aggregate(0, (totalAny, group) => totalAny + group.Replace("\n", "").Distinct().Count());
         }
 
         public static int PartTwo()
         {
             var groups = Utilities.GetInputParagraphs(6);
-            var totalEvery = 0;
 
-            foreach (var group in groups)
-            {
-                var answers = new HashSet<char>();
-                var lines = Utilities.GetLines(group);
-
-                foreach (var line in lines)
-                {
-                    foreach (var letter in line)
-                        answers.Add(letter);
-                }
-
-                totalEvery += answers.Where(c => lines.All(x => x.Contains(c))).Count();
-            }
-
-            return totalEvery;
+            return groups.Aggregate(0, (totalEvery, group) => totalEvery + group.Replace("\n", "").Distinct().Where(c => Utilities.GetLines(group).All(x => x.Contains(c))).Count());
         }
-
 
     }
 }

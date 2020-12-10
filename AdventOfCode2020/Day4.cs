@@ -13,16 +13,16 @@ namespace AdventOfCode2020
 
         public static int PartOne()
         {
-            var lines = Utilities.GetInputLines(4);
+            var groups = Utilities.GetInputParagraphs(4);
             var validCount = 0;
 
             var reqFields = new List<string> { "byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid" };
 
-            foreach (var line in lines)
+            foreach (var group in groups)
             {
                 var fields = new Dictionary<string, string>();
 
-                foreach (var pair in Utilities.GetWords(line))
+                foreach (var pair in Utilities.GetWords(group))
                 {
                     var parts = pair.Split(':');
                     fields.Add(parts[0], parts[1]);
@@ -37,29 +37,29 @@ namespace AdventOfCode2020
 
         public static int PartTwo()
         {
-            var lines = Utilities.GetInputLines(4);
+            var groups = Utilities.GetInputParagraphs(4);
             var validCount = 0;
 
             var reqFields = new List<string> { "byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid" };
 
-            foreach (var line in lines)
+            foreach (var group in groups)
             {
                 var fields = new Dictionary<string, string>();
 
-                foreach (var pair in Utilities.GetWords(line))
+                foreach (var pair in Utilities.GetWords(group))
                 {
                     var parts = pair.Split(':');
                     fields.Add(parts[0], parts[1]);
                 }
 
-                if (reqFields.All(x => fields.ContainsKey(x)) && fields.All(x => isValid(x.Key, x.Value)))
+                if (reqFields.All(x => fields.ContainsKey(x)) && fields.All(x => IsValid(x.Key, x.Value)))
                     validCount++;
             }
 
             return validCount;
         }
 
-        private static bool isValid(string field, string value)
+        private static bool IsValid(string field, string value)
         {
             switch (field)
             {

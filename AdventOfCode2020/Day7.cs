@@ -14,7 +14,6 @@ namespace AdventOfCode2020
         public static int PartOne()
         {
             var lines = Utilities.GetInputLines(7);
-            var canContainGold = 0;
             var bags = new Dictionary<string, List<(string color, int num)>>();
 
             foreach (var line in lines)
@@ -42,13 +41,7 @@ namespace AdventOfCode2020
                 }
             }
 
-            foreach (var bag in bags.Keys)
-            {
-                if (CanContainShinyGold(bag, bags))
-                    canContainGold++;
-            }
-
-            return canContainGold - 1;
+            return bags.Keys.Where(bag => CanContainShinyGold(bag, bags)).Count() - 1;
         }
 
         public static int PartTwo()

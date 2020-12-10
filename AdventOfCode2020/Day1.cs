@@ -12,11 +12,7 @@ namespace AdventOfCode2020
 
         public static int PartOne()
         {
-            var lines = Utilities.GetInputLines(1);
-            var numbers = new List<int>();
-
-            foreach (var line in lines)
-                numbers.Add(Int32.Parse(line));
+            var numbers = Utilities.GetInputNums(1);
 
             for (int i = 0; i < numbers.Count - 1; i++)
                 if (numbers[i] < 2020)
@@ -24,17 +20,12 @@ namespace AdventOfCode2020
                         if (numbers[i] + numbers[j] == 2020)
                             return numbers[i] * numbers[j];
 
-
             return -1;
         }
 
         public static int PartTwo()
         {
-            var lines = Utilities.GetInputLines(1);
-            var numbers = new List<int>();
-
-            foreach (var line in lines)
-                numbers.Add(Int32.Parse(line));
+            var numbers = Utilities.GetInputNums(1);
 
             for (int i = 0; i < numbers.Count - 2; i++)
                 if (numbers[i] < 2020)

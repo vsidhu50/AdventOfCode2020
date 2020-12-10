@@ -13,33 +13,14 @@ namespace AdventOfCode2020
         public static int PartOne()
         {
             var lines = Utilities.GetInputLines(5);
-            var maxSeat = 0;
 
-            foreach (var line in lines)
-            {
-                var row = Convert.ToInt32(line.Substring(0,7).Replace('F', '0').Replace('B', '1'), 2);
-                var col = Convert.ToInt32(line.Substring(7, 3).Replace('L', '0').Replace('R', '1'), 2);
-
-                maxSeat = Math.Max(row * 8 + col, maxSeat);
-            }
-
-            return maxSeat;
+            return lines.Select(line => Convert.ToInt32(line.Replace('F', '0').Replace('B', '1').Replace('L', '0').Replace('R', '1'), 2)).Max();
         }
 
         public static int PartTwo()
         {
             var lines = Utilities.GetInputLines(5);
-            var filledSeats = new List<int>();
-
-            foreach (var line in lines)
-            {
-                var row = Convert.ToInt32(line.Substring(0, 7).Replace('F', '0').Replace('B', '1'), 2);
-                var col = Convert.ToInt32(line.Substring(7, 3).Replace('L', '0').Replace('R', '1'), 2);
-
-                filledSeats.Add(row * 8 + col);
-            }
-
-            filledSeats.Sort();
+            var filledSeats = lines.Select(line => Convert.ToInt32(line.Replace('F', '0').Replace('B', '1').Replace('L', '0').Replace('R', '1'), 2)).OrderBy(x => x).ToList();
 
             for (int i = 1; i < filledSeats.Count; i++)
             {
@@ -47,7 +28,7 @@ namespace AdventOfCode2020
                     return filledSeats[i] - 1;
             }
 
-            return 0;
+            return -1;
         }
     }
 }
