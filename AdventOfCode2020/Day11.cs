@@ -12,18 +12,9 @@ namespace AdventOfCode2020
 
         public static int PartOne()
         {
-            var rows = Utilities.GetInputLines(11);
-            var numRows = rows.Count;
-            var numCols = rows[0].Length;
-
-            var grid = new char[numRows, numCols];
-            for (int i = 0; i < numRows; i++)
-            {
-                for (int j = 0; j < numCols; j++)
-                {
-                    grid[i, j] = rows[i][j];
-                }
-            }
+            var grid = Utilities.GetInputGridChars(11);
+            var numRows = grid.GetLength(0);
+            var numCols = grid.GetLength(1);
 
             var oldGrid = grid;
             var newGrid = grid;
@@ -51,18 +42,9 @@ namespace AdventOfCode2020
 
         public static int PartTwo()
         {
-            var rows = Utilities.GetInputLines(11);
-            var numRows = rows.Count;
-            var numCols = rows[0].Length;
-
-            var grid = new char[numRows, numCols];
-            for (int i = 0; i < numRows; i++)
-            {
-                for (int j = 0; j < numCols; j++)
-                {
-                    grid[i, j] = rows[i][j];
-                }
-            }
+            var grid = Utilities.GetInputGridChars(11);
+            var numRows = grid.GetLength(0);
+            var numCols = grid.GetLength(1);
 
             var oldGrid = grid;
             var newGrid = grid;
