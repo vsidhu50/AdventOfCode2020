@@ -37,10 +37,7 @@ namespace AdventOfCode2020
             numbers.Add(0);
             numbers.Sort();
 
-            var paths = new List<long>(new long[numbers.Count])
-            {
-                [0] = 1
-            };
+            var paths = new List<long>(new long[numbers.Count]) { [0] = 1 }; 
 
             for (int i = 1; i < numbers.Count; i++)
             {

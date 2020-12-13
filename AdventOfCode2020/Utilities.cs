@@ -54,5 +54,10 @@ namespace AdventOfCode2020
         {
             return input.Split(new string[] { " ", "\t", Environment.NewLine, ",", "\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
         }
+
+        public static List<int> GetNums(string input)
+        {
+            return input.Split(new string[] { " ", "\t", Environment.NewLine, ",", "\n" }, StringSplitOptions.RemoveEmptyEntries).Select(x => Int32.Parse(x)).ToList();
+        }
     }
 }
